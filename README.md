@@ -284,15 +284,26 @@ This project helped in understanding:
 
 ## ThingsBoard Dashboard
 
-(Add screenshots here)
+#### Smart-Factory-dashboard
+![smart-factory](Screenshots/smart-factory-dashboard.png)
+
+#### Node1 
+![node1](Screenshots/node1.png)
+
+#### Node2 connection
+![node2](Screenshots/Wearhouse-dashboard.png)
+
 
 ## PICSimLab Simulation
 
-(Add screenshots here)
+#### Node1 connection
+![node1](Screenshots/Node1-picsimlab.png)
+
+#### Node2 connection
+![node2](Screenshots/Node2-picsimlab.png)
 
 ---
 
-# How to Run
 
 ## Requirements
 
@@ -327,7 +338,7 @@ Replace with your ThingsBoard device token.
 
 # Author
 
-Adithyan Anil Kumar
+Adithyan Anilkumar
 
 ---
 
