@@ -53,6 +53,7 @@ Features:
 ```text
 Sensors → Arduino UNO → Ethernet Shield → MQTT → ThingsBoard Cloud Dashboard
 ```
+![Architecture](Screenshots/iot architecture.png)
 
 Both nodes communicate independently with ThingsBoard using MQTT protocol.
 
