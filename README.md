@@ -1,2 +1,321 @@
-# Smart-Factory-Monitoring-System
-IoT-based Smart Factory Monitoring System using Arduino, MQTT, Things Board and PICSimLab
+# Smart Factory Monitoring System
+
+An IoT-based Smart Factory Monitoring System built using Arduino, MQTT, ThingsBoard, Ethernet communication, and PICSimLab simulation.
+The system monitors industrial and warehouse environments in real time, publishes telemetry data to the cloud, supports remote RPC control, and performs automated environmental actions.
+
+---
+
+# Project Overview
+
+This project simulates a smart factory consisting of two independent monitoring nodes:
+
+## Node 1 — Production Line Monitoring
+
+Monitors:
+
+* Temperature
+* Humidity
+* Machine vibration
+* Machine operational status
+
+Features:
+
+* Real-time telemetry publishing
+* Remote relay control using ThingsBoard RPC
+* Sensor fault detection
+* Status indication LEDs
+* MQTT communication using Ethernet
+
+---
+
+## Node 2 — Warehouse Monitoring
+
+Monitors:
+
+* Temperature
+* Humidity
+* Motion detection
+* Door status
+* Light intensity (LDR)
+
+Features:
+
+* Automatic ventilation control during critical humidity
+* Remote relay control through dashboard
+* PIR-based motion monitoring
+* Warehouse darkness detection
+* Real-time telemetry publishing
+
+---
+
+# System Architecture
+
+```text
+Sensors → Arduino UNO → Ethernet Shield → MQTT → ThingsBoard Cloud Dashboard
+```
+
+Both nodes communicate independently with ThingsBoard using MQTT protocol.
+
+---
+
+# Technologies Used
+
+* Arduino UNO
+* Embedded C++
+* MQTT Protocol
+* ThingsBoard Cloud
+* Ethernet Shield (W5100)
+* PICSimLab
+* DHT22 Sensor
+* LM35 Temperature Sensor
+* PIR Motion Sensor
+* LDR Sensor
+* Relay Module
+* LEDs
+* PubSubClient Library
+
+---
+
+# Features
+
+## Real-Time Monitoring
+
+* Continuous telemetry publishing every 5 seconds
+* Cloud dashboard visualization
+
+## MQTT Communication
+
+* Secure communication with ThingsBoard
+* Automatic reconnection handling
+
+## RPC Remote Control
+
+* Remote relay switching from dashboard
+* MQTT-based command execution
+
+## Smart Automation
+
+* Automatic warehouse ventilation when humidity exceeds critical threshold
+
+## Fault Detection
+
+* DHT22 sensor failure handling
+* Status LED indications
+
+## Hardware Simulation
+
+* Fully tested using PICSimLab virtual environment
+
+---
+
+# Folder Structure
+
+```text
+Smart-Factory-Monitoring-System/
+│
+├── Node1_Production/
+│   └── node1/
+│
+├── Node2_Warehouse/
+│   └── node2/
+│
+├── screenshots/
+│
+└── README.md
+```
+
+---
+
+# Node 1 Sensors & Actuators
+
+## Sensors
+
+* DHT22
+* LM35
+* Vibration Sensor
+* Push Button
+
+## Actuators
+
+* Relay
+* Green LED
+* Yellow LED
+* Red LED
+
+---
+
+# Node 2 Sensors & Actuators
+
+## Sensors
+
+* DHT22
+* PIR Motion Sensor
+* LDR
+* Magnetic Door Sensor
+
+## Actuators
+
+* Ventilation Relay
+* Green LED
+* Yellow LED
+* Red LED
+
+---
+
+# LED Status Indication
+
+## Green LED
+
+* System operating normally
+
+## Yellow LED
+
+* Sensor warning/error condition
+
+## Red LED
+
+* MQTT/Network disconnected
+
+---
+
+# RPC Commands Supported
+
+## setRelay
+
+```json
+{"method":"setRelay","params":true}
+```
+
+## getStatus
+
+```json
+{"method":"getStatus","params":null}
+```
+
+---
+
+# Telemetry Data Example
+
+```json
+{
+  "temperature": 28.5,
+  "humidity": 72.1,
+  "vibration": 320,
+  "machineStatus": 1,
+  "relayState": 0,
+  "sensorError": 0
+}
+```
+
+---
+
+# ThingsBoard Integration
+
+The project uses:
+
+* MQTT Telemetry API
+* MQTT RPC API
+* Dashboard widgets
+* Alarm monitoring
+
+Dashboard capabilities:
+
+* Live sensor monitoring
+* Relay switching
+* Alarm visualization
+* Device connectivity tracking
+
+---
+
+# PICSimLab Simulation
+
+The project was simulated using PICSimLab for:
+
+* Sensor simulation
+* Relay simulation
+* LED visualization
+* Real-time hardware testing
+
+---
+
+# Key Learnings
+
+This project helped in understanding:
+
+* Embedded systems programming
+* MQTT communication
+* IoT cloud integration
+* RPC handling
+* Real-time telemetry systems
+* Sensor interfacing
+* Automation logic
+* Git & GitHub workflow
+* Modular firmware architecture
+
+---
+
+# Future Improvements
+
+* Add ESP32/WiFi support
+* Add database logging
+* Mobile app integration
+* Predictive maintenance using AI/ML
+* SMS/Email alert system
+* Multi-node scalability
+
+---
+
+# Screenshots
+
+## ThingsBoard Dashboard
+
+(Add screenshots here)
+
+## PICSimLab Simulation
+
+(Add screenshots here)
+
+---
+
+# How to Run
+
+## Requirements
+
+* Arduino IDE
+* PICSimLab
+* ThingsBoard account
+* Ethernet Shield
+* Required Arduino libraries
+
+## Libraries
+
+Install:
+
+* PubSubClient
+* Ethernet
+* DHT Sensor Library
+* Adafruit Unified Sensor
+
+---
+
+# Configuration
+
+Update `config.h`:
+
+```cpp
+#define ACCESS_TOKEN "YOUR_DEVICE_TOKEN"
+```
+
+Replace with your ThingsBoard device token.
+
+---
+
+# Author
+
+Adithyan Anil Kumar
+
+---
+
+# License
+
+This project is developed for educational and learning purposes.
