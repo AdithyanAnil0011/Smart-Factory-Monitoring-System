@@ -7,8 +7,19 @@ The system monitors industrial and warehouse environments in real time, publishe
 
 # Project Overview
 
-This project simulates a smart factory consisting of two independent monitoring nodes:
+#  Distributed IoT Monitoring - Proposed solution
 
+```text
+Sensors → Arduino UNO → Ethernet Shield → MQTT → ThingsBoard Cloud Dashboard
+```
+![proposed](Screenshots/proposed-solution.png)
+
+Both nodes communicate independently with ThingsBoard using MQTT protocol.
+
+---
+
+
+## This project simulates a smart factory consisting of two independent monitoring nodes:
 ## Node 1 — Production Line Monitoring
 
 Monitors:
@@ -51,11 +62,10 @@ Features:
 # System Architecture
 
 ```text
-Sensors → Arduino UNO → Ethernet Shield → MQTT → ThingsBoard Cloud Dashboard
+3-Tier IoT Architecture
 ```
-![Architecture](Screenshots/iot architecture.png)
+![architecture](Screenshots/system-architecture.png)
 
-Both nodes communicate independently with ThingsBoard using MQTT protocol.
 
 ---
 
@@ -130,11 +140,10 @@ Smart-Factory-Monitoring-System/
 # Node 1 Sensors & Actuators
 
 ## Sensors
+* DHT22(Temp/Humidity)
+* LM35(Temp)
+* Vibration Sensor(used potentiometer)
 
-* DHT22
-* LM35
-* Vibration Sensor
-* Push Button
 
 ## Actuators
 
@@ -142,6 +151,7 @@ Smart-Factory-Monitoring-System/
 * Green LED
 * Yellow LED
 * Red LED
+* Push Button
 
 ---
 
@@ -149,10 +159,10 @@ Smart-Factory-Monitoring-System/
 
 ## Sensors
 
-* DHT22
+* DHT22(Temp/Humidity)
 * PIR Motion Sensor
-* LDR
-* Magnetic Door Sensor
+* LDR(Light Sensor)
+* Door Sensor(used a switch)
 
 ## Actuators
 
@@ -178,35 +188,29 @@ Smart-Factory-Monitoring-System/
 * MQTT/Network disconnected
 
 ---
+## Project Requirements
+#### Functional Requirements
+* Real-time	sensor	data	collection	every	5	seconds
+* Automated	threshold-based	alerting	(temperature,	vibration,	humidity)
+* Remote	relay	/	actuator	control	via	ThingsBoard	dashboard
+* Historical	trend	analysis	and	data	reporting
+* Multi-node	coordination	for	emergency	scenarios
+* MQTT	telemetry	publishing	with	JSON	payload	format
 
-# RPC Commands Supported
+#### Non-Functional & Simulator Requirements
+#### Non-Functional
+* End-to-end	latency	<	5	seconds
+* System	uptime	>	99%
+* Scalable	to	100+	nodes
+* MQTT	message	size	≤	256	bytes
+* Dashboard	load	time	<	3	seconds
+#### Simulator	(PICSimLab)
+* PICSimLab	for	Arduino	Uno	simulation
+* Virtual	sensors:	DHT22,	LM35,	PIR,	LDR
+* Simulated	Ethernet	(W5100)	connectivity
+* No	physical	hardware	required
+* Supports	full	firmware	testing	&	MQTT
 
-## setRelay
-
-```json
-{"method":"setRelay","params":true}
-```
-
-## getStatus
-
-```json
-{"method":"getStatus","params":null}
-```
-
----
-
-# Telemetry Data Example
-
-```json
-{
-  "temperature": 28.5,
-  "humidity": 72.1,
-  "vibration": 320,
-  "machineStatus": 1,
-  "relayState": 0,
-  "sensorError": 0
-}
-```
 
 ---
 
