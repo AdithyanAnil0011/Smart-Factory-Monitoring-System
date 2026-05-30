@@ -69,6 +69,15 @@ Features:
 
 ---
 
+# System Block Diagram
+
+```text
+End-to-End Data & Control Flow
+```
+![block-diagram](Screenshots/system-block-diagram.png)
+
+
+---
 # Technologies Used
 
 * Arduino UNO
@@ -215,6 +224,8 @@ Smart-Factory-Monitoring-System/
 ---
 
 # ThingsBoard Integration
+![Thingsboard](Screenshots/Things_board.png)
+
 
 The project uses:
 
@@ -254,7 +265,6 @@ This project helped in understanding:
 * Real-time telemetry systems
 * Sensor interfacing
 * Automation logic
-* Git & GitHub workflow
 * Modular firmware architecture
 
 ---
