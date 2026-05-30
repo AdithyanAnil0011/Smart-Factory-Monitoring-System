@@ -310,7 +310,6 @@ This project helped in understanding:
 * Arduino IDE
 * PICSimLab
 * ThingsBoard account
-* Ethernet Shield
 * Required Arduino libraries
 
 ## Libraries
@@ -321,6 +320,7 @@ Install:
 * Ethernet
 * DHT Sensor Library
 * Adafruit Unified Sensor
+* SPI Library
 
 ---
 
@@ -338,8 +338,13 @@ Replace with your ThingsBoard device token.
 
 # Author
 
-Adithyan Anilkumar
+Developed by Adithyan Anilkumar
 
+Passionate about:
+* Industrial IoT 
+* Embedded Systems
+* AI & Machine Learning
+Linkedin Profle:https://www.linkedin.com/in/adithyan-anilkumar-a23129329/
 ---
 
 # License
